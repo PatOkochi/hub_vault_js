@@ -1,4 +1,5 @@
 function getCreditCardToken(public_key, card_number, month, year) {
+    var base_url = 'https://stage-vault.hubsynch.com';
     let card_request = {
         "card": {
             "number": card_number,
