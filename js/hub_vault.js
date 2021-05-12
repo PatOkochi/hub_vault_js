@@ -1,4 +1,5 @@
 function getCreditCardToken(public_key, card_number, month, year) {
+    var base_url = 'https://stage-vault.hubsynch.com';
     let card_request = {
         "card": {
             "number": card_number,
@@ -9,7 +10,7 @@ function getCreditCardToken(public_key, card_number, month, year) {
 
     let myHeaders = new Headers();
 
-    myHeaders.append("x-api-key", public_key);                
+    myHeaders.append("x-api-key", public_key);
     myHeaders.append("Content-Type", "application/json");
 
     let requestOptions = {
@@ -20,19 +21,19 @@ function getCreditCardToken(public_key, card_number, month, year) {
     };
 
     return fetch(
-        base_url + "/api/v1/tokens",
-        requestOptions
-    )
-    .then(response => response.text())
-    .then(result => {
-        console.log(result);
-        return result;
-    })
-    .catch(error => console.log('error', error));
+            base_url + "/api/v1/tokens",
+            requestOptions
+        )
+        .then(response => response.text())
+        .then(result => {
+            console.log(result);
+            return result;
+        })
+        .catch(error => console.log('error', error));
 
 }
 
-function setCreditCardInfo(){
+function setCreditCardInfo() {
     var tag = document.createElement("div");
     var text = document.createTextNode("This is the popup");
     tag.setAttribute('aria-hidden', 'true');
