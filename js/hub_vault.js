@@ -32,14 +32,3 @@ function getCreditCardToken(public_key, card_number, month, year) {
         .catch(error => console.log('error', error));
 
 }
-
-function setCreditCardInfo() {
-    var tag = document.createElement("div");
-    var text = document.createTextNode("This is the popup");
-    tag.setAttribute('aria-hidden', 'true');
-    tag.appendChild(text);
-    var element = document.body;
-    element.appendChild(tag);
-}
-
-window.onload = setCreditCardInfo();
